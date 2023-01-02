@@ -15,7 +15,7 @@ class Speaker(Enum):
     LJS_BASE_44 = "ljs_base_44khz"
     OPENSLR_FEMALE_44 = "openslr_92_44"
     OPENSLR_MALE_44 = "openslr_9017_44"
-
+    CHILD_VOICE_GERDA_44 = "child_voice_gerda"
 
 class InferenceConfig:
     synthesizer: Synthesizer
@@ -90,6 +90,16 @@ def get_inference_configs(speakers: List[Speaker], audiobook_synthesis: bool = F
                 # checkpoint_step=185000,
                 config_name='milda_no_noise_44khz',
                 speaker=Speaker.MILDA_STUDIO_44,
+                clean_accentuation=False,
+                audiobook_synthesis=audiobook_synthesis,
+                device=device,
+            )
+
+        if speaker == Speaker.CHILD_VOICE_GERDA_44:
+            configs[Speaker.CHILD_VOICE_GERDA_44] = InferenceConfig(
+                checkpoint_step=70000,
+                config_name='gerda_44khz',
+                speaker=Speaker.CHILD_VOICE_GERDA_44,
                 clean_accentuation=False,
                 audiobook_synthesis=audiobook_synthesis,
                 device=device,
