@@ -31,7 +31,6 @@
     "mel_fmax": null,
     "add_blank": true,
     "n_speakers": 0,
-    "cleaned_text": true,
     "language": "lt"
   },
   "model": {

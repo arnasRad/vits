@@ -30,7 +30,6 @@
     "mel_fmax": null,
     "add_blank": true,
     "n_speakers": 109,
-    "cleaned_text": true
   },
   "model": {
     "inter_channels": 192,
